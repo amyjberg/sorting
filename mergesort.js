@@ -29,10 +29,15 @@ function merge(arr1, arr2) {
 }
 
 function mergeSort(arr) {
-    //base case;
+
+     if (arr.length === 1 || arr.length === 0) {
+
+        return arr;
+     } else {
+
+        let halved = split(arr);
+        let left = halved[0];
+        let right = halved[1];
+        return merge(mergeSort(left),mergeSort(right));
+     }
 }
-
-let arr1 = [1, 2, 3];
-let arr2 = [6, 7];
-
-let mArray = [5, 8, 2, 6, 0, 9, 2, 6, 1, 3];
